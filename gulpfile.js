@@ -10,7 +10,7 @@ var javascriptFiles = [
 ];
 
 gulp.task('bundle', function(){
-    return gulp.search(javascriptFiles)
+    return gulp.src(javascriptFiles)
     .pipe(concat('bundle.js'))
     .pipe(uglify())
     .pipe(gulp.dest("./dist"));
