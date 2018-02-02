@@ -1,6 +1,6 @@
 var gulp = ('gulp');
 var concat = require('gulp-concat');
-var uglify = reqire('gulp-uglify');
+var uglify = require('gulp-uglify');
 
 var javascriptFiles = [
     './app.js',
