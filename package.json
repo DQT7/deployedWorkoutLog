@@ -4,15 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./node_modules/http-server/bin/http-server"
+    "start": "node ./node_modules/http-server/bin/http-server",
+    "postinstall": "bower install"
   },
   "author": " DeQuon Turner",
-  "license": "ISC",
-  "devDependencies": {
-    "http-server": "^0.10.0"
-  },
+  "license": "MIT",
   "dependencies": {
-    "bower": "^1.8.2"
+    "bower": "^1.7.9"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^2.1.2",
+    "http-server": "^0.9.0"
   }
 }
