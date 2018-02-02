@@ -1,4 +1,4 @@
-var gulp = ('gulp');
+var gulp = require('gulp');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 
@@ -9,7 +9,7 @@ var javascriptFiles = [
     './user/auth.js'
 ];
 
-gulp.task('bundle', function(){
+gulp.task('bundle', function() {
     return gulp.src(javascriptFiles)
     .pipe(concat('bundle.js'))
     .pipe(uglify())
