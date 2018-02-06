@@ -6,7 +6,7 @@ $(function() {
 			setDefinitions: function() {
 				var defs = WorkoutLog.definition.userDefinitions;
 				var len = defs.length;
-				var opts;
+				var opts = "";
 				for (var i = 0; i < len; i++) {
 					opts += "<option value='" + defs[i].id +"'>" + defs[i].description + "</option>";
 				}
@@ -63,7 +63,7 @@ $(function() {
 				var deleteData = { log: thisLog };
 				var deleteLog = $.ajax({
 					type: "DELETE",
-					url: WorkoutLog.API_BASE + "log",
+					url: WorkoutLog.API_BASE + "nutrition",
 					data: JSON.stringify(deleteData),
 					contentType: "application/json"
 				});
