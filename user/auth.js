@@ -3,6 +3,7 @@ $(function() {
        signup: function() {
              var username = $("#su_username").val();
              var password = $("#su_password").val();
+             var email = $("#su_email").val();
              var user = {user:  {username: username, password: password }};
              var signup = $.ajax({
                 type: "POST", 
@@ -24,9 +25,10 @@ $(function() {
  
                 $("#su_username").val("");
                 $("#su_password").val("");
+                $("#su_email").val("");
              })
              .fail(function() {
-                $("#su_error").text("There was an issue with your username").show();
+                $("#su_error").text("There was an issue with your username and password").show();
                
              });
        },
