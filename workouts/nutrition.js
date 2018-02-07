@@ -53,7 +53,7 @@ $(function() {
 			//.attr("id") targets the value of the id attribute of button
 					id: $(this).attr("id")
 				};
-				var deleteData = { nutrition: thisnutrition};
+				var deleteData = { nutri2tion: thisnutrition};
 				var deletenutrition= $.ajax({
 					type: "DELETE",
 					url: WorkoutLog.API_BASE + "nutrition",
