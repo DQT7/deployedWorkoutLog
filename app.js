@@ -1,7 +1,7 @@
 $(function(){
 
   var WorkoutLog = (function($, undefined) {
-        var API_BASE =  "https://strongkick.herokuapp.com/api";
+        var API_BASE =  "http://localhost:3000/api/";
         var userDefinitions = [];
   
         var setAuthHeader = function(sessionToken) {
@@ -24,7 +24,7 @@ $(function(){
      })(jQuery);
   
      // Ensure .disabled aren't clickable
-     $(".nav-tabs a[data-toggle=tab]").on("submit", function(e) {
+     $(".nav-tabs a[data-toggle=tab]").on("click", function(e) {
         var token = window.localStorage.getItem("sessionToken");
         if ($(this).hasClass("disabled") && !token) {
            e.preventDefault();
@@ -52,10 +52,10 @@ $(function(){
      $(document).on("keypress", function(e) {
         if (e.which === 13) { // enter key
            if ($("#signup-modal").is(":visible")) {
-              $("#signup").trigger("submit");
+              $("#signup").trigger("click");
            }
            if ($("#login-modal").is(":visible")) {
-              $("#login").trigger("submit");
+              $("#login").trigger("click");
            }
         }
      });
@@ -72,15 +72,15 @@ $(function(){
           WorkoutLog.log.setHistory();
        }
     });
-  
+    $("#nutrition-save").on("click", WorkoutLog.nutrtion.create());
     // bind enter key
      $(document).on("keypress", function(e) {
         if (e.which === 13) { // enter key
            if ($("#signup-modal").is(":visible")) {
-              $("#signup").trigger("submit");
+              $("#signup").trigger("click");
            }
            if ($("#login-modal").is(":visible")) {
-              $("#login").trigger("submit");
+              $("#login").trigger("click");
            }
         }
      });
