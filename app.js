@@ -52,10 +52,10 @@ $(function(){
      $(document).on("keypress", function(e) {
         if (e.which === 13) { // enter key
            if ($("#signup-modal").is(":visible")) {
-              $("#signup").trigger("click");
+              $("#signup").trigger("submit");
            }
            if ($("#login-modal").is(":visible")) {
-              $("#login").trigger("click");
+              $("#login").trigger("submit");
            }
         }
      });
