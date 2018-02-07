@@ -24,12 +24,13 @@ $(function() {
 				}
 				$("#history-list").children().remove();
 				$("#history-list").append(lis);
-			},
+            },
+            
 			create: function() {
+                console.log('i did it ')
 				var itsnutrition= { 
-		        	desc: $("#nutrition-description").val(),
-		         	result: $("#nutrition-result").val(),
-		         	def: $("#nutrition-definition option:selected").text()
+		        	
+		         	meal: $("#nutrition-definition option:selected").text()
 		      	};
 		      	var postData = { log: itsnutrition};
 		      	var logger = $.ajax({
