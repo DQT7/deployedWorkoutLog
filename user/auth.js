@@ -1,6 +1,7 @@
 $(function() {
     $.extend( WorkoutLog, {
-       signup: function() {
+       signup: function(e) {
+             e.preventDefault();
              var username = $("#su_username").val();
              var password = $("#su_password").val();
              var email = $("#su_email").val();
@@ -76,7 +77,7 @@ $(function() {
  
     // bind events
     $("#login").on("click", WorkoutLog.login);
-    $("#signup").on("click", WorkoutLog.signup);
+    $("#getRight").submit( WorkoutLog.signup);
     $("#loginout").on("click", WorkoutLog.loginout);
  
     if (window.localStorage.getItem("sessionToken")) {

@@ -1,0 +1,14 @@
+body{
+    background-image: url("https://scontent-ort2-1.xx.fbcdn.net/v/t1.0-0/q84/p526x296/27658068_10155106843917127_4820801904874827985_n.jpg?oh=f6708365d0ab47d2ef4c321864f7f6ff&oe=5AE18144");
+    height:100%;
+    background-position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.pretty{
+    position:relative;
+    
+    font-size:300px;
+    
+    
+}

@@ -45,6 +45,7 @@ $(function(){
   
         if (target === "#history") {
            WorkoutLog.log.setHistory();
+           WorkoutLog.nutrition.setHistory();
         }
      });
   
@@ -52,10 +53,10 @@ $(function(){
      $(document).on("keypress", function(e) {
         if (e.which === 13) { // enter key
            if ($("#signup-modal").is(":visible")) {
-              $("#signup").trigger("click");
+              $("#signup").trigger("submit");
            }
            if ($("#login-modal").is(":visible")) {
-              $("#login").trigger("click");
+              $("#login").trigger("submit");
            }
         }
      });
@@ -70,17 +71,19 @@ $(function(){
   
        if (target === "#history") {
           WorkoutLog.log.setHistory();
+          WorkoutLog.nutrition.setHistory();
+          
        }
     });
-    $("#nutrition-save").on("click", WorkoutLog.nutrtion.create());
+ 
     // bind enter key
      $(document).on("keypress", function(e) {
         if (e.which === 13) { // enter key
            if ($("#signup-modal").is(":visible")) {
-              $("#signup").trigger("click");
+              $("#signup").trigger("submit");
            }
            if ($("#login-modal").is(":visible")) {
-              $("#login").trigger("click");
+              $("#login").trigger("sumbit");
            }
         }
      });

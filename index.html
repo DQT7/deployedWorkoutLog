@@ -10,6 +10,7 @@
 
   <!-- Bootstrap -->
   <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css"> 
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -36,7 +37,7 @@
   <div class="container">
     <div class="tab-content">
       <div class="tab-pane active" id="home">
-        <h2>Workout Log</h2>
+        <h1>Workout Log</h1>
         <div id="forLogin">
           <!-- have the class build the modals for these http://getbootstrap.com/javascript/#modals -->
           <button data-toggle="modal" data-target="#login-modal" class="btn btn-primary">Login</button>
@@ -83,20 +84,21 @@
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
+        <form id="meal-form">
         <div class="modal-header">
-         
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title" id="myModalLabel">Meals/Calories Log</h4>
         </div>
         <div class="modal-body">
           <h4>Put What You Ate!  </h4>
           <h6>w/Calories & Date</h6>
-          <textarea class="form-control" id='mealInfo' rows="3"> </textarea>
+          <textarea class="form-control" id='nutrtion-description' rows="3"> </textarea>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button class="dobtn"id ="nutrition-save" class="btn btn-primary">Submit</button>
+          <button class='close' type="button"id="nutrition-save" class="btn btn-primary">Submit</button>
         </div>
+      </form>
       </div>
     </div>
   </div>
@@ -156,6 +158,7 @@
    <div class="modal-dialog">
      <div class="modal-content">
        <div class="modal-header">
+         <form id='getRight'>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title">Sign Up</h4>
       </div>
@@ -163,17 +166,22 @@
       <div class="alert alert-danger" role="alert" style="display:none;" id="su_error"></div>
         <label for="su_username">Username:</label>
         <input id="su_username" />
+        <br>
+        <br>
+         
+        
         <label for="su_password">Password:</label>
-        <input type="password" id="su_password" />
+        <input type="password"minlength="5" id="su_password" />
         <label for="li_email">Email address:</label>
-          <input type="li_email"  id="li_email" placeholder="Email">
+          <input type="li_email"  id="li_email" placeholder="optional">
         </div>
 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <button id="signup" type="button" class="btn btn-primary">Signup</button>
+        <button id="signup" type="submit" class="btn btn-primary">Signup</button>
       </div>
+    </form>
      </div>
    </div>
  </div>

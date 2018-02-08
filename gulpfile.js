@@ -6,6 +6,7 @@ var javascriptFiles = [
     './app.js',
     './workouts/define.js',
     './workouts/log.js',
+    './workouts/nutrition.js',
     './user/auth.js'
 ];
 

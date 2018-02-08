@@ -1,28 +1,25 @@
 
 $(function() {
+    alert('nutrition file loading')
 	$.extend(WorkoutLog, {
 		nutrition: {
 			meal: [],
-
-			
-			
-
 			setHistory: function() {
-				var history = WorkoutLog.nutrition.workouts;
+				var history = WorkoutLog.nutrition.meal;
 				var len = history.length;
 				var lis = "";
 					for (var i = 0; i < len; i++) {
 					lis += "<li class='list-group-item'>" + 
 					// history[i].id + " - " + 
-					history[i].def + " - " + 
-					history[i].result + " " +
+					history[i].meal + " - " + 
+					// history[i].result + " " +
 					// pass the log.id into the button's id attribute // watch your quotes!
 					"<div class='pull-right'>" +
 						"<button id='" + history[i].id + "' class='update'><strong>U</strong></button>" +
 						"<button id='" + history[i].id + "' class='remove'><strong>X</strong></button>" +
 					"</div></li>";
 				}
-				$("#history-list").children().remove();
+				// $("#history-list").children().remove();
 				$("#history-list").append(lis);
             },
             
@@ -30,20 +27,23 @@ $(function() {
                 console.log('i did it ')
 				var itsnutrition= { 
 		        	
-		         	meal: $("#nutrition-definition option:selected").text()
-		      	};
-		      	var postData = { log: itsnutrition};
+		         	meal: $("#nutrtion-description").val()
+                  };
+                  console.log(itsnutrition)
+		      	var postData = {nutrition : itsnutrition};
 		      	var logger = $.ajax({
 		         	type: "POST",
-		         	url: WorkoutLog.API_BASE + "nutrtion",
+		         	url: WorkoutLog.API_BASE + "nutrition",
 		         	data: JSON.stringify(postData),
 		         	contentType: "application/json"
 		      	});
 
 		      	logger.done(function(data) {
-	      			WorkoutLog.nutrition.workouts.push(data);
+                      console.log(data)
+	      			WorkoutLog.nutrition.meal.push(data);
 	      			$("#nutrtion-description").val("");
-					$("#nutrtion-result").val("");
+                    $("#nutrtion-result").val("");
+                    $('#myModal').modal('hide');
 					$('a[href="#history"]').tab("show");
 		      	});
 			},
@@ -67,9 +67,9 @@ $(function() {
 				$(this).closest("li").remove();
 
 				// deletes item out of workouts array
-				for(var i = 0; i < WorkoutLog.log.workouts.length; i++){
-					if(WorkoutLog.log.workouts[i].id == thisLog.id){
-						WorkoutLog.log.workouts.splice(i, 1);
+				for(var i = 0; i < WorkoutLog.nutrtion.workouts.length; i++){
+					if(WorkoutLog.nutrition.meal[i].id == thisnutrition.id){
+						WorkoutLog.nutrtion.meal.splice(i, 1);
 					}
 				}
 				deleteLog.fail(function(){
@@ -87,7 +87,8 @@ $(function() {
 			         }
 			      })
 			      .done(function(data) {
-			         WorkoutLog.nutrition.workouts = data;
+                      console.log(data)
+			         WorkoutLog.nutrition.meal = data;
 			      })
 			      .fail(function(err) {
 			         console.log(err);
