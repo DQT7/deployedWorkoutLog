@@ -1,7 +1,7 @@
 $(function(){
 
   var WorkoutLog = (function($, undefined) {
-        var API_BASE =  "https://strongkick.herokuapp.com/api";
+        var API_BASE =  "https://strongkick.herokuapp.com/";
         var userDefinitions = [];
   
         var setAuthHeader = function(sessionToken) {
